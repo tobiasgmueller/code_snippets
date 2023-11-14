@@ -1,0 +1,34 @@
+---
+title: "code_snippets"
+author: "Tobias"
+date: "2023-11-14"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Code will be written so that 
+
+
+
+
+to auto generate letters you can use cldList from the rcompanion package
+```{r}
+library(rcompanion)
+
+
+# auto generate sig letters
+letter_contact<- dunn_test_output %>%
+  unite(comparison, c(group1, group2), sep = "-")%>%
+  cldList(p.adj ~ comparison, data = .)
+
+```
+The above code will work with dunn test by combining group 1 and goup 2 columns into 1 column. dont need unite line if using on Tukey which outputs single comparison column. 
+
+
+
+
+
