@@ -26,6 +26,15 @@ read_csv("data.csv") %>%
 ```
 
 
+write file name from variable
+```{r}
+
+x = "name"
+
+write_csv(df, file = paste("output/", x, "_more_information.csv", sep=""))
+
+```
+
 
 
 to auto generate letters you can use cldList from the rcompanion package
